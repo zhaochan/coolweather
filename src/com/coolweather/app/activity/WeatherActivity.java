@@ -1,5 +1,7 @@
 package com.coolweather.app.activity;
 
+import net.youmi.android.banner.AdSize;
+import net.youmi.android.banner.AdView;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -83,6 +85,14 @@ public class WeatherActivity extends Activity implements OnClickListener{
 		}
 		switchCity.setOnClickListener(this);
 		refreshWeather.setOnClickListener(this);
+		
+		
+		//实例化广告条
+		AdView adView = new AdView(this, AdSize.FIT_SCREEN);
+		//获取要嵌入广告条的布局
+		LinearLayout adLayout=(LinearLayout)findViewById(R.id.adLayout);
+		//将广告条加入到布局中
+		adLayout.addView(adView);
 	}
 	
 	@Override
